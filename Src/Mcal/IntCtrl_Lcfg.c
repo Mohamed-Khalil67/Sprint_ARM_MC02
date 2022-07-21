@@ -1,8 +1,8 @@
 /**********************************************************************************************************************
  *  FILE DESCRIPTION
  *  -----------------------------------------------------------------------------------------------------------------*/
-/**        \file  FileName.c
- *        \brief  
+/**        \file  IntCtrl_Lcfg.c
+ *        \brief  Represents the Dynamic Part "user-defined" of Interrupt Controller
  *
  *      \details  
  *
@@ -13,9 +13,8 @@
  *  INCLUDES
  *********************************************************************************************************************/
 #include "Std_Types.h"
+#include "IntCtrl_Lcfg.h"
 #include "IntCtrl.h"
-#include "Mc_Hw.h"
-
 /**********************************************************************************************************************
 *  LOCAL MACROS CONSTANT\FUNCTION
 *********************************************************************************************************************/
@@ -27,7 +26,18 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA
  *********************************************************************************************************************/
-
+/*Container for User Data*/
+const User_data_type g_user_data = 
+{
+	.groupspriority_config = USE_2_GROUPS_4_SUBGROUPS,
+	
+	.Int_Cfg[0].Interrupt_idx = GPIOA_IRQ,
+	.Int_Cfg[0].Group_Prio = GROUP_PRIO_0,
+	.Int_Cfg[0].Sub_Group_Prio = SUB_GROUP_PRIO_1,
+	
+	.Int_Cfg[1] = {GPIOB_IRQ,GROUP_PRIO_1,SUB_GROUP_PRIO_1},
+	.Int_Cfg[2] = {GPIOC_IRQ,GROUP_PRIO_1,SUB_GROUP_PRIO_0},
+};
 /**********************************************************************************************************************
  *  LOCAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
@@ -40,28 +50,6 @@
  *  GLOBAL FUNCTIONS
  *********************************************************************************************************************/
 
-
-/******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
-* \Description     : Describe this service                                    
-*                                                                             
-* \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : parameterName   Parameter Describtion                     
-* \Parameters (out): None                                                      
-* \Return value:   : None                                  
-*******************************************************************************/
-void IntCtrl_Init(void)
-{
-    /*TODO Configure Grouping\SubGroubing System in APINT register in SCB*/
-    APINT = 0xFA05|0x00001234;
-
-    /*TODO : Enable\Disable based on user configuration in NVIC_ENx and SCB_Sys Registers */
-
-    /*TODO : Assign Group\SubGroup priority in NVIC_PRIx NVIC and SCB_SYSPRIx Registers*/
-
-}
-
 /**********************************************************************************************************************
- *  END OF FILE: FileName.c
+ *  END OF FILE: IntCtrl_Lcfg.c
  *********************************************************************************************************************/

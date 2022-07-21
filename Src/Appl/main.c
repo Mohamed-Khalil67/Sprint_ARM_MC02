@@ -1,6 +1,6 @@
 #include "IntCtrl.h"
 
-int main(void){
+void main(void){
 	IntCtrl_Init();
 	while(1){
 	
