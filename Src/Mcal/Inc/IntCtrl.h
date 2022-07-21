@@ -8,8 +8,8 @@
  *  Description:  header file for IntCrtl Module    
  *  
  *********************************************************************************************************************/
-#ifndef IntCrtl_H
-#define IntCrtl_H
+#ifndef INTCTRL_H
+#define INTCTRL_H
 
 /**********************************************************************************************************************
  * INCLUDES
@@ -214,16 +214,8 @@ void IntCrtl_Init(void);
 *******************************************************************************/
 
 void Interrupt_Set_and_Cfg(uint8_t int_num,uint8_t pri_group);
-/******************************************************************************
-* \Syntax          : void Groups_Cfg(Group_SubgroupType type)        
-* \Description     : Set the Groups-Sub-Groups Priorities                                                         
-* \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Reentrant                                             
-* \Parameters (in) : type   Group-Subgroup set, please refer to Group_SubgroupType for more info                                                       
-*******************************************************************************/
-void Groups_Cfg(Group_SubgroupType type);
  
-#endif /* IntCrtl_H */
+#endif /* INTCTRL_H */
 
 /**********************************************************************************************************************
  *  END OF FILE: IntCrtl.h

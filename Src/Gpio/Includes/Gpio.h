@@ -1,61 +1,36 @@
 /**********************************************************************************************************************
+
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Std_Types.h
- *    Component:  -
- *       Module:  -
+ *         File:  Gpio.h
+ *       Module:  Gpio
  *
- *  Description:  Provision of Standard Types
- *
+ *  Description:  header file for Gpio Module    
+ *  
  *********************************************************************************************************************/
-
-#ifndef STD_TYPES_H
-#define STD_TYPES_H
+#ifndef GPIO_H
+#define GPIO_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-
+#include "Std_Types.h"
+#include "Mc_Hw.h"
+#include "Gpio_Types.h"
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
-# define STD_HIGH     1u /* Physical state 5V or 3.3V */
-# define STD_LOW      0u /* Physical state 0V */
 
-# define STD_ACTIVE   1u /* Logical state active */
-# define STD_IDLE     0u /* Logical state idle */
+/**********************************************************************************************************************
+ *  GLOBAL FUNCTION MACROS
+ *********************************************************************************************************************/
 
-# define STD_ON       1u
-# define STD_OFF      0u
-
-# define TRUE       true
-# define FALSE     false
-# define ENABLED       1
-# define DISABLED      0
-# define SET           1
-# define CLEAR         0
-# define SUCCESS       0
-# define ERROR		  -1
-
-#ifndef NULL
-#define NULL  ((void*)0)
-#endif
 
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
 
-#define E_OK          0u
-#define E_NOT_OK      1u
-
-typedef unsigned char             uint8_t;
-typedef signed char               sint8_t;
-typedef unsigned int              uint32_t;
-typedef signed int                sint32_t;
-typedef signed int                Std_ReturnType;
-typedef unsigned short            uint16_t;
-typedef signed short              sint16_t;
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
@@ -65,9 +40,23 @@ typedef signed short              sint16_t;
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
+ 
+/******************************************************************************
+* \Syntax          : 
+* \Description     :      
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Non Reentrant                                             
+* \Parameters (in) :                                                        
+* \Parameters (in) :                                                      
+*******************************************************************************/
+ 
+void Port_Init(const ConfigType* ConfigInit_Ptr)
+{
 
+}
 
-#endif /* STD_TYPES_H */
+#endif /* Gpio_H */
+
 /**********************************************************************************************************************
- *  END OF FILE: Std_Types.h
+ *  END OF FILE: Gpio.h
  *********************************************************************************************************************/
