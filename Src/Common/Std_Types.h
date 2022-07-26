@@ -46,16 +46,15 @@
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
 
-#define E_OK          0u
-#define E_NOT_OK      1u
+#define E_OK                            0u
+#define E_NOT_OK                        1u
 
-typedef unsigned char             uint8_t;
-typedef signed char               sint8_t;
-typedef unsigned int              uint32_t;
-typedef signed int                sint32_t;
-typedef signed int                Std_ReturnType;
+typedef unsigned char              uint8_t;
+typedef signed char                sint8_t;
 typedef unsigned short            uint16_t;
 typedef signed short              sint16_t;
+typedef unsigned int              uint32_t;
+typedef signed int                sint32_t;
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES

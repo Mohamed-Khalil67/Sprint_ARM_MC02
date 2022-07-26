@@ -212,8 +212,6 @@ void IntCrtl_Init(void);
 * \Parameters (in) : int_num     Exception Number in vector Table index                                                       
 * \Parameters (in) : pri_group   group priority for this Exception                                                       
 *******************************************************************************/
-
-void Interrupt_Set_and_Cfg(uint8_t int_num,uint8_t pri_group);
  
 #endif /* INTCTRL_H */
 

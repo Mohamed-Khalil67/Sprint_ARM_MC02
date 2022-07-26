@@ -14,11 +14,10 @@
  * INCLUDES
  *********************************************************************************************************************/
 #include "Std_Types.h"
-
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
-
+#define CONFIGURE_GPIO_PINS 10
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
@@ -32,15 +31,10 @@ typedef enum{
     SPECIAL_MODE = 1
 }PortPinMode;
 
-typedef enum{ /* Page 663 */
-    Input = 0,
-    Output = 1
-}PortPin_Direction;
-
 typedef enum{ /* Page 677 */
     PullUp = 0,
     PullDown = 1,
-    OpenDrain
+    OpenDrain = 3
 }AttachType;
 
 typedef enum{ /* Page 673 */
@@ -61,13 +55,13 @@ typedef enum{ /* Page 663 */
 
 typedef enum{
     PIN0 =0,
-    PIN1 =0,
-    PIN2 =0,
-    PIN3 =0,
-    PIN4 =0,
-    PIN5 =0,
-    PIN6 =0,
-    PIN7 =0
+    PIN1 =1,
+    PIN2 =2,
+    PIN3 =3,
+    PIN4 =4,
+    PIN5 =5,
+    PIN6 =6,
+    PIN7 =7
 }PinType;
 
 typedef enum{ /* Page 688 */
@@ -87,15 +81,22 @@ typedef struct{
 
 typedef struct{
     PortPinMode Mode;
-    PortPin_Direction Direction;
+    DirectionMode Direction;
     LevelType Level;
     CurrentSelect Current;
     AttachType Attach;
     ChannelType Channel;
 }ConfigType;
 
+typedef struct {
+    uint16_t pin;
+    uint32_t mode;
+    uint32_t io_type;
+    uint32_t pupd;
+	uint32_t enable_alt;
+    uint32_t alternate;
+} gpio_pin_conf_t;
 
- 
 #endif /* GPIO_TYPES_H */
 
 /**********************************************************************************************************************

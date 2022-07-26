@@ -51,16 +51,7 @@
 * \Parameters (out): None                                                      
 * \Return value:   : None                                  
 *******************************************************************************/
-void IntCtrl_Init(void)
-{
-    /*TODO Configure Grouping\SubGroubing System in APINT register in SCB*/
-    APINT = 0xFA05|0x00001234;
 
-    /*TODO : Enable\Disable based on user configuration in NVIC_ENx and SCB_Sys Registers */
-
-    /*TODO : Assign Group\SubGroup priority in NVIC_PRIx NVIC and SCB_SYSPRIx Registers*/
-
-}
 
 /**********************************************************************************************************************
  *  END OF FILE: FileName.c
